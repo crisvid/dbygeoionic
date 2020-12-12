@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'departamentos',
+    loadChildren: () => import('./pages/departamentos/departamentos.module').then( m => m.DepartamentosPageModule)
+  },
+  {
+    path: 'departamento/:id',
+    loadChildren: () => import('./pages/departamento/departamento.module').then( m => m.DepartamentoPageModule)
+  },
+  {
+    path: 'geolocalizacion',
+    loadChildren: () => import('./pages/geolocalizacion/geolocalizacion.module').then( m => m.GeolocalizacionPageModule)
+  },
 ];
 
 @NgModule({
